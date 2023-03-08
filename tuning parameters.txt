@@ -1,1 +1,16 @@
 Summary of tuning_playbook, link here:https://github.com/google-research/tuning_playbook
+
+General Guide for starting:
+1. Problem-formulation and basic data-cleaning:Done
+2. Setting up the pipeline that does training and evaluation:Done
+3. Proper metric to evaluate the model:accuracy and trainin time(less than 120s)
+
+
+Then we need to consider following points:
+A. Choose the model architecture or start from existing one.
+B. Choose optimizer, batch size and inital configuration.
+C. Exploration versus exploitation, try to get more insight from data, rather than spending all the time improving validation errors.
+D. Design next experiments: scientific, nuisance and fixed parameters.
+   Note: A study specifies a set of hyperparameter configurations to be run for subsequent analysis. Each configuration is called a "trial".
+E. Identify the best observed trial and essential paramsters.
+F. Finally for our compute-bound training, we do need to spend a lot of time improving the efficiency of training, which includ but not limited to : Computing loss, gradient, and putting data on GPU.
